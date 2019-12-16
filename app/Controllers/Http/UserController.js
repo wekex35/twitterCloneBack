@@ -1,15 +1,18 @@
 'use strict'
 
-class UserController {
-	const User = use('App/Models/User')
-	const Hash = use('Hash')
-	const Tweet = use('App/Models/Tweet')
+const User = use('App/Models/User')
+const Hash = use('Hash')
+const Tweet = use('App/Models/Tweet')
 
+class UserController {
+	
 
 	async signup ({ request, auth, response }) {
     // get user data from signup form
+   
+    
     const userData = request.only(['name', 'username', 'email', 'password'])
-
+    // return userData;
     try {
         // save user to database
 	        const user = await User.create(userData)
@@ -21,7 +24,9 @@ class UserController {
 	            data: token
 	        })
 	    } catch (error) {
+            // return error
 	        return response.status(400).json({
+                error : error,
 	            status: 'error',
 	            message: 'There was a problem creating the user, please try again later.'
 		    })

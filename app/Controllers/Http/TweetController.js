@@ -1,8 +1,10 @@
 'use strict'
 
+const Tweet = use('App/Models/Tweet')
+const Reply = use('App/Models/Reply')
+
 class TweetController {
-	const Tweet = use('App/Models/Tweet')
-	const Reply = use('App/Models/Reply')
+
 
 
 	async tweet ({ request, auth, response }) {

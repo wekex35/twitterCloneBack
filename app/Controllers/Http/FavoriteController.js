@@ -1,5 +1,7 @@
 'use strict'
 
+const Favorite = use('App/Models/Favorite')
+
 class FavoriteController {
 
 const Favorite = use('App/Models/Favorite')
